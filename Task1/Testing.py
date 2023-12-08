@@ -23,7 +23,7 @@ def argumets():
     parser.add_argument('-tsp',"--test_path", default=os.path.join(Root,"New Masks Dataset\Validation" ), help='folder Path for testing images') 
     parser.add_argument('-f',"--freeze", default=False, help='freeze the base model layers') 
     parser.add_argument('-v',"--verbose", default=True, help='verbose to show the model outputs') 
-    parser.add_argument('-M',"--model", default=1, help="select the model 1->'resnet154',2->'EfficientNetV2'") 
+    parser.add_argument('-M',"--model", default=2, help="select the model 1->'resnet154',2->'EfficientNetV2'") 
     parser.add_argument('-r',"--result", default=os.path.join(Root, 'results'), help='Folder for to save the results') 
     parser.add_argument('-e',"--epoch", default=50, help='Epochs for training') 
 
@@ -34,11 +34,6 @@ def argumets():
 def test():
     
     model_name = {1:'resnet154',2:'EfficientNetV2'}
-    
-    
-    
-    
-    
     
     if tf.test.is_gpu_available():
         print("GPU Available: ", tf.config.list_physical_devices('GPU'))
@@ -97,7 +92,7 @@ def test():
     
     values.plot.bar(x='thresholds')
     plt.savefig(arg.result +'\\'+ model_name[arg.model] + '_performace.png')
-    # plt.show() 
+    plt.show() 
     # print(values) 
     
     plot_roc_curve(fpr,tpr,arg.result +'\\'+ model_name[arg.model])

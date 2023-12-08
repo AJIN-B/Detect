@@ -1,5 +1,7 @@
 
 venv
+VisDrone
+
 
 Task1/model_weights
 Task1/New Masks Dataset
@@ -7,3 +9,10 @@ Task1/New Masks Dataset
 Task1/tring.py
 Task1/refer.txt
 Task1/trian_toch.py
+
+Task2
+# Task2/yolov5
+# Task2/yolov5
+
+
+
